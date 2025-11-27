@@ -1,5 +1,5 @@
 <template>
-  <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8" role="navigation" aria-label="Main navigation">
+  <nav class="hidden lg:flex items-center space-x-8" role="navigation" aria-label="Main navigation">
     <template v-for="item in navItems" :key="item.href">
       <!-- Dropdown Menu Item -->
       <DropdownMenu
@@ -11,7 +11,7 @@
       <NuxtLink
         v-else
         :to="item.href"
-        class="nav-item text-sm xl:text-base text-gray-700 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-1 whitespace-nowrap"
+        class="nav-item text-sm font-medium text-white/80 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded px-2 py-1"
         :aria-current="isCurrentPage(item.href) ? 'page' : undefined"
       >
         {{ item.label }}
@@ -21,9 +21,10 @@
     <!-- Booking CTA -->
     <NuxtLink
       to="/lien-he/dat-lich-hen"
-      class="btn-primary px-4 xl:px-6 py-2 text-sm xl:text-base rounded-lg bg-primary text-white hover:bg-primary-dark transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 whitespace-nowrap"
+      class="group relative px-6 py-2.5 overflow-hidden rounded-full bg-primary text-white font-medium shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300 hover:-translate-y-0.5"
     >
-      Đặt Lịch Ngay
+      <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+      <span class="relative z-10">Đặt Lịch Ngay</span>
     </NuxtLink>
   </nav>
 </template>
@@ -44,23 +45,29 @@ const isCurrentPage = (href: string) => {
 
 <style scoped>
 .nav-item {
-  @apply relative;
+  position: relative;
 }
 
 .nav-item::after {
   content: '';
-  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: theme('colors.primary.DEFAULT');
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  opacity: 0;
 }
 
-.nav-item:hover::after {
-  @apply w-full;
-}
-
+.nav-item:hover::after,
 .nav-item.router-link-active::after {
-  @apply w-full;
+  width: 100%;
+  opacity: 1;
 }
 
 .nav-item.router-link-active {
-  @apply text-primary font-semibold;
+  @apply text-white;
 }
 </style>

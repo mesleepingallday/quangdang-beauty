@@ -12,20 +12,28 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#0066cc',
-          dark: '#0052a3',
-          light: '#4d94ff',
+          DEFAULT: '#3B82F6', // Electric Blue
+          dark: '#2563EB',
+          light: '#60A5FA',
         },
         secondary: {
-          DEFAULT: '#673ab7',
-          dark: '#512da8',
-          light: '#d1c4e9',
+          DEFAULT: '#8B5CF6', // Cyber Purple
+          dark: '#7C3AED',
+          light: '#A78BFA',
         },
+        accent: {
+          DEFAULT: '#CCFF00', // Acid Green
+        },
+        dark: {
+          bg: '#030305', // Deep Obsidian
+          surface: '#0A0A0C',
+        }
       },
       fontFamily: {
-        sans: ['Momo Trust Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        heading: ['Momo Trust Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        display: ['Momo Trust Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        sans: ['DM Sans', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
+        heading: ['Syne', 'sans-serif'],
+        display: ['Space Grotesk', 'sans-serif'],
       },
       container: {
         center: true,

@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="relative"
+    class="relative group"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
   >
@@ -8,7 +8,7 @@
     <button
       :id="`dropdown-trigger-${item.label}`"
       type="button"
-      class="nav-item flex items-center gap-1 text-sm xl:text-base text-gray-700 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded whitespace-nowrap"
+      class="nav-item flex items-center gap-1 text-sm font-medium text-white/80 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded px-2 py-1"
       :aria-expanded="isOpen"
       :aria-haspopup="true"
       :aria-controls="`dropdown-menu-${item.label}`"
@@ -19,52 +19,60 @@
       <span>{{ item.label }}</span>
       <Icon
         name="heroicons:chevron-down"
-        class="w-3 h-3 xl:w-4 xl:h-4 transition-transform duration-200"
+        class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
         :class="{ 'rotate-180': isOpen }"
       />
     </button>
 
     <!-- Dropdown Menu -->
     <Transition
-      name="dropdown"
-      @after-leave="onAfterLeave"
+      enter-active-class="transition duration-200 ease-out"
+      enter-from-class="opacity-0 translate-y-2"
+      enter-to-class="opacity-100 translate-y-0"
+      leave-active-class="transition duration-150 ease-in"
+      leave-from-class="opacity-100 translate-y-0"
+      leave-to-class="opacity-0 translate-y-2"
     >
       <div
         v-if="isOpen"
         :id="`dropdown-menu-${item.label}`"
-        class="absolute top-full left-0 mt-2 min-w-[240px] bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50"
+        class="absolute top-full left-0 mt-4 w-[320px] bg-dark-bg/90 backdrop-blur-xl rounded-xl border border-white/10 shadow-2xl shadow-black/50 overflow-hidden z-50 p-2"
         role="menu"
         :aria-labelledby="`dropdown-trigger-${item.label}`"
         @keydown.escape="closeDropdown"
         @keydown.tab="handleTab"
       >
-        <NuxtLink
-          v-for="(child, index) in item.children"
-          :key="child.href"
-          :to="child.href"
-          :ref="el => dropdownItems[index] = el as any"
-          class="dropdown-item block px-5 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors focus:outline-none focus:bg-gray-50 focus:text-primary"
-          role="menuitem"
-          :tabindex="isOpen ? 0 : -1"
-          @click="closeDropdown"
-          @keydown.down.prevent="focusNextItem(index)"
-          @keydown.up.prevent="focusPreviousItem(index)"
-        >
-          <div class="flex items-center gap-2">
-            <Icon 
-              v-if="child.icon" 
-              :name="child.icon" 
-              class="w-4 h-4"
-            />
-            <span>{{ child.label }}</span>
-          </div>
-          <p 
-            v-if="child.description" 
-            class="text-xs text-gray-500 mt-1"
+        <div class="grid gap-1">
+          <NuxtLink
+            v-for="(child, index) in item.children"
+            :key="child.href"
+            :to="child.href"
+            :ref="el => dropdownItems[index] = el as any"
+            class="group/item block px-4 py-3 rounded-lg hover:bg-white/5 transition-colors focus:outline-none focus:bg-white/5"
+            role="menuitem"
+            :tabindex="isOpen ? 0 : -1"
+            @click="closeDropdown"
+            @keydown.down.prevent="focusNextItem(index)"
+            @keydown.up.prevent="focusPreviousItem(index)"
           >
-            {{ child.description }}
-          </p>
-        </NuxtLink>
+            <div class="flex items-start gap-3">
+              <div v-if="child.icon" class="mt-1 text-primary/70 group-hover/item:text-primary transition-colors">
+                <Icon :name="child.icon" class="w-5 h-5" />
+              </div>
+              <div>
+                <div class="text-sm font-medium text-white group-hover/item:text-primary transition-colors">
+                  {{ child.label }}
+                </div>
+                <p 
+                  v-if="child.description" 
+                  class="text-xs text-white/50 mt-0.5 line-clamp-2"
+                >
+                  {{ child.description }}
+                </p>
+              </div>
+            </div>
+          </NuxtLink>
+        </div>
       </div>
     </Transition>
   </div>
@@ -82,18 +90,14 @@ const dropdownItems = ref<Array<HTMLElement | null>>([])
 let hoverTimeout: NodeJS.Timeout | null = null
 
 const handleMouseEnter = () => {
-  // Debounce hover to prevent accidental triggers
-  hoverTimeout = setTimeout(() => {
-    isOpen.value = true
-  }, 300)
+  if (hoverTimeout) clearTimeout(hoverTimeout)
+  isOpen.value = true
 }
 
 const handleMouseLeave = () => {
-  if (hoverTimeout) {
-    clearTimeout(hoverTimeout)
-    hoverTimeout = null
-  }
-  isOpen.value = false
+  hoverTimeout = setTimeout(() => {
+    isOpen.value = false
+  }, 200)
 }
 
 const toggleDropdown = () => {
@@ -104,19 +108,10 @@ const closeDropdown = () => {
   isOpen.value = false
 }
 
-const onAfterLeave = () => {
-  // Reset dropdown items refs
-  dropdownItems.value = []
-}
-
 // Keyboard navigation
 const focusFirstItem = () => {
-  if (!isOpen.value) {
-    isOpen.value = true
-  }
-  nextTick(() => {
-    dropdownItems.value[0]?.focus()
-  })
+  if (!isOpen.value) isOpen.value = true
+  nextTick(() => dropdownItems.value[0]?.focus())
 }
 
 const focusNextItem = (currentIndex: number) => {
@@ -132,63 +127,40 @@ const focusPreviousItem = (currentIndex: number) => {
 }
 
 const handleTab = (e: KeyboardEvent) => {
-  if (!e.shiftKey && !e.defaultPrevented) {
-    // Tab forward - close dropdown
-    closeDropdown()
-  }
+  if (!e.shiftKey && !e.defaultPrevented) closeDropdown()
 }
 
-// Close dropdown when clicking outside
 onClickOutside(
   computed(() => document.querySelector(`#dropdown-trigger-${props.item.label}`)?.parentElement),
-  () => {
-    closeDropdown()
-  }
+  () => closeDropdown()
 )
 
-// Cleanup timeout on unmount
 onUnmounted(() => {
-  if (hoverTimeout) {
-    clearTimeout(hoverTimeout)
-  }
+  if (hoverTimeout) clearTimeout(hoverTimeout)
 })
 </script>
 
 <style scoped>
 .nav-item {
-  @apply relative;
+  position: relative;
 }
 
 .nav-item::after {
   content: '';
-  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200;
-}
-
-.nav-item:hover::after {
-  @apply w-full;
-}
-
-/* Dropdown transitions */
-.dropdown-enter-active {
-  transition: all 200ms ease-out;
-}
-
-.dropdown-leave-active {
-  transition: all 150ms ease-in;
-}
-
-.dropdown-enter-from {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: theme('colors.primary.DEFAULT');
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
   opacity: 0;
-  transform: translateY(-8px);
 }
 
-.dropdown-leave-to {
-  opacity: 0;
-  transform: translateY(-4px);
-}
-
-/* Dropdown item active state */
-.dropdown-item.router-link-active {
-  @apply bg-blue-50 text-primary;
+.nav-item:hover::after,
+.nav-item[aria-expanded="true"]::after {
+  width: 100%;
+  opacity: 1;
 }
 </style>

@@ -1,17 +1,23 @@
 <template>
-  <header class="bg-white shadow-sm sticky top-0 z-50">
-    <nav class="container mx-auto px-4 py-3">
+  <header 
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/10"
+    :class="[
+      isScrolled ? 'bg-dark-bg/80 backdrop-blur-xl shadow-lg shadow-primary/5' : 'bg-transparent'
+    ]"
+  >
+    <nav class="container mx-auto px-4 py-4">
       <div class="flex items-center justify-between gap-8">
         <!-- Logo -->
         <NuxtLink
           to="/"
-          class="flex-shrink-0 group"
+          class="flex-shrink-0 group relative"
           aria-label="Beauty Med Spa - Trang chủ"
         >
+          <div class="absolute -inset-2 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <img
             src="/logo.svg"
             alt="Beauty Med Spa Logo"
-            class="h-24 transition-transform duration-200 group-hover:scale-105"
+            class="h-12 relative z-10 transition-transform duration-300 group-hover:scale-105"
           />
         </NuxtLink>
 
@@ -21,7 +27,7 @@
         <!-- Mobile Menu Button -->
         <button
           @click="toggleMobileMenu"
-          class="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+          class="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
           aria-label="Toggle menu"
           :aria-expanded="isMobileMenuOpen"
         >
@@ -40,89 +46,44 @@
 </template>
 
 <script setup lang="ts">
-import type { NavItem } from "~/types";
-
-const isMobileMenuOpen = ref(false);
-
-const navItems: NavItem[] = [
-  {
-    label: "Dịch Vụ",
-    href: "/dich-vu",
-    children: [
-      { label: "Tiêm Botox", href: "/dich-vu/tiem-botox" },
-      { label: "Tiêm Filler", href: "/dich-vu/tiem-filler" },
-      { label: "Trị Liệu IPL", href: "/dich-vu/tri-lieu-ipl" },
-      { label: "Microneedling", href: "/dich-vu/microneedling" },
-      { label: "HydraFacial", href: "/dich-vu/hydrafacial" },
-      { label: "Chăm Sóc Da", href: "/dich-vu/cham-soc-da" },
-    ],
-  },
-  {
-    label: "Khuyến Mãi",
-    href: "/khuyen-mai",
-  },
-  {
-    label: "Đội Ngũ Bác Sĩ",
-    href: "/doi-ngu-bac-si",
-  },
-  {
-    label: "Công Nghệ",
-    href: "/cong-nghe",
-  },
-  {
-    label: "Tin Tức",
-    href: "/tin-tuc",
-    children: [
-      { label: "Tin Tức Làm Đẹp", href: "/tin-tuc/tin-tuc-lam-dep" },
-      { label: "Mẹo Chăm Sóc Da", href: "/tin-tuc/meo-cham-soc-da" },
-      { label: "Xu Hướng Thẩm Mỹ", href: "/tin-tuc/xu-huong-tham-my" },
-      { label: "Câu Hỏi Thường Gặp", href: "/tin-tuc/faq" },
-    ],
-  },
-  {
-    label: "Về Chúng Tôi",
-    href: "/ve-chung-toi",
-    children: [
-      { label: "Giới Thiệu", href: "/ve-chung-toi" },
-      { label: "Câu Chuyện", href: "/ve-chung-toi#cau-chuyen" },
-      { label: "Sứ Mệnh & Tầm Nhìn", href: "/ve-chung-toi#su-menh" },
-      { label: "Giá Trị Cốt Lõi", href: "/ve-chung-toi#gia-tri" },
-      { label: "Cơ Sở Vật Chất", href: "/ve-chung-toi#co-so" },
-    ],
-  },
-  {
-    label: "Liên Hệ",
-    href: "/lien-he",
-    children: [
-      { label: "Thông Tin Liên Hệ", href: "/lien-he" },
-      { label: "Đặt Lịch Hẹn", href: "/lien-he/dat-lich-hen" },
-    ],
-  },
-];
+const { navItems } = useNavigation()
+const isMobileMenuOpen = ref(false)
+const isScrolled = ref(false)
 
 const toggleMobileMenu = () => {
-  isMobileMenuOpen.value = !isMobileMenuOpen.value;
-};
+  isMobileMenuOpen.value = !isMobileMenuOpen.value
+}
 
 const closeMobileMenu = () => {
-  isMobileMenuOpen.value = false;
-};
+  isMobileMenuOpen.value = false
+}
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 20
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+  handleScroll()
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <style scoped>
-.btn-primary {
-  @apply inline-block font-semibold;
-}
-
-.text-primary {
-  color: #0066cc;
-}
-
-.bg-primary {
-  background-color: #0066cc;
-}
-
-.bg-primary-dark {
-  background-color: #0052a3;
+/* Holographic effect */
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  pointer-events: none;
+  z-index: -1;
 }
 </style>

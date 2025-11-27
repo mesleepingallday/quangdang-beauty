@@ -1,27 +1,41 @@
 <template>
   <!-- Backdrop -->
-  <Transition name="backdrop">
+  <Transition
+    enter-active-class="transition-opacity duration-300 ease-out"
+    enter-from-class="opacity-0"
+    enter-to-class="opacity-100"
+    leave-active-class="transition-opacity duration-200 ease-in"
+    leave-from-class="opacity-100"
+    leave-to-class="opacity-0"
+  >
     <div
       v-if="isVisible"
-      class="lg:hidden fixed inset-0 z-50 bg-black bg-opacity-50 backdrop-blur-sm"
+      class="lg:hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
       @click="$emit('close')"
     >
       <!-- Mobile Menu Panel -->
-      <Transition name="slide">
+      <Transition
+        enter-active-class="transition-transform duration-300 ease-out"
+        enter-from-class="translate-x-full"
+        enter-to-class="translate-x-0"
+        leave-active-class="transition-transform duration-200 ease-in"
+        leave-from-class="translate-x-0"
+        leave-to-class="translate-x-full"
+      >
         <div
           v-if="isVisible"
-          class="absolute right-0 top-0 bg-white w-4/5 max-w-sm h-full shadow-2xl overflow-y-auto"
+          class="absolute right-0 top-0 bg-dark-bg/95 backdrop-blur-xl w-full max-w-sm h-full shadow-2xl border-l border-white/10 overflow-y-auto"
           @click.stop
           role="dialog"
           aria-modal="true"
           aria-label="Mobile navigation menu"
         >
           <!-- Close Button -->
-          <div class="sticky top-0 bg-white border-b border-gray-100 px-6 py-4 flex justify-between items-center z-10">
-            <span class="text-xl font-bold text-primary">Menu</span>
+          <div class="sticky top-0 bg-dark-bg/95 backdrop-blur-xl border-b border-white/10 px-6 py-4 flex justify-between items-center z-10">
+            <span class="text-xl font-display font-bold text-white">Menu</span>
             <button
               @click="$emit('close')"
-              class="p-2 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+              class="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
               aria-label="Close menu"
             >
               <Icon name="heroicons:x-mark" class="w-6 h-6" />
@@ -42,7 +56,7 @@
               <NuxtLink
                 v-else
                 :to="item.href"
-                class="block py-3 px-4 text-lg font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset"
+                class="block py-3 px-4 text-lg font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
                 :aria-current="$route.path === item.href ? 'page' : undefined"
                 @click="$emit('close')"
               >
@@ -51,13 +65,14 @@
             </template>
 
             <!-- Mobile Booking Button -->
-            <div class="pt-6 mt-6 border-t border-gray-200">
+            <div class="pt-6 mt-6 border-t border-white/10">
               <NuxtLink
                 to="/lien-he/dat-lich-hen"
-                class="btn-primary block w-full px-6 py-3 rounded-lg bg-primary text-white text-center font-semibold hover:bg-primary-dark transition-all duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                class="group relative block w-full px-6 py-3 rounded-lg bg-primary text-white text-center font-semibold overflow-hidden shadow-lg shadow-primary/25"
                 @click="$emit('close')"
               >
-                Đặt Lịch Ngay
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                <span class="relative z-10">Đặt Lịch Ngay</span>
               </NuxtLink>
             </div>
           </nav>
@@ -91,42 +106,8 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.text-primary {
-  color: #0066cc;
-}
-
-.bg-primary {
-  background-color: #0066cc;
-}
-
-.bg-primary-dark {
-  background-color: #0052a3;
-}
-
-/* Backdrop transitions */
-.backdrop-enter-active,
-.backdrop-leave-active {
-  transition: opacity 300ms ease-in-out;
-}
-
-.backdrop-enter-from,
-.backdrop-leave-to {
-  opacity: 0;
-}
-
-/* Slide transitions */
-.slide-enter-active,
-.slide-leave-active {
-  transition: transform 300ms ease-in-out;
-}
-
-.slide-enter-from,
-.slide-leave-to {
-  transform: translateX(100%);
-}
-
 /* Active link styling */
 nav a.router-link-active {
-  @apply bg-blue-50 text-primary font-semibold;
+  @apply bg-primary/10 text-primary font-semibold;
 }
 </style>

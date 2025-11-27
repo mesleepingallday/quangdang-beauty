@@ -4,7 +4,7 @@
     <button
       :id="`accordion-trigger-${item.label}`"
       type="button"
-      class="w-full flex items-center justify-between py-3 px-4 text-lg font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset"
+      class="w-full flex items-center justify-between py-3 px-4 text-lg font-medium text-white/80 hover:text-white hover:bg-white/5 transition-colors rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
       :aria-expanded="isOpen"
       :aria-controls="`accordion-content-${item.label}`"
       @click="toggleAccordion"
@@ -37,7 +37,7 @@
             v-for="child in item.children"
             :key="child.href"
             :to="child.href"
-            class="block py-2.5 px-4 text-base text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset"
+            class="block py-2.5 px-4 text-base text-white/60 hover:text-white hover:bg-white/5 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
             @click="$emit('navigate')"
           >
             <div class="flex items-center gap-2">
@@ -48,6 +48,12 @@
               />
               <span>{{ child.label }}</span>
             </div>
+            <p 
+              v-if="child.description" 
+              class="text-xs text-white/40 mt-0.5 line-clamp-1"
+            >
+              {{ child.description }}
+            </p>
           </NuxtLink>
         </div>
       </div>
@@ -107,6 +113,6 @@ const onAfterLeave = (el: Element) => {
 
 /* Active link styling */
 .accordion-content a.router-link-active {
-  @apply bg-blue-50 text-primary font-semibold;
+  @apply bg-primary/10 text-primary font-semibold;
 }
 </style>

@@ -8,37 +8,53 @@
 /* Custom base styles that work with Tailwind */
 @layer base {
   body {
-    @apply font-sans text-gray-800 bg-white;
+    @apply font-sans text-base text-gray-800 bg-white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold text-gray-900;
+  /* H1 and H2 use Momo Trust Display for maximum impact */
+  h1, h2 {
+    @apply font-display font-bold text-gray-900;
+  }
+  
+  /* H3-H6 use Momo Trust Sans for consistency with body text */
+  h3, h4, h5, h6 {
+    @apply font-sans font-semibold text-gray-900;
   }
   
   h1 {
-    @apply text-5xl;
+    @apply text-5xl md:text-6xl leading-tight tracking-tight;
   }
   
   h2 {
-    @apply text-4xl;
+    @apply text-4xl md:text-5xl leading-tight tracking-tight;
   }
   
   h3 {
-    @apply text-3xl;
+    @apply text-3xl leading-snug;
   }
   
   h4 {
-    @apply text-2xl;
+    @apply text-2xl leading-snug;
   }
   
   h5 {
-    @apply text-xl;
+    @apply text-xl leading-normal;
   }
   
   h6 {
-    @apply text-lg;
+    @apply text-lg leading-normal;
+  }
+  
+  /* Improve body text readability */
+  p {
+    @apply leading-relaxed;
+  }
+  
+  /* Button text optimization */
+  button {
+    @apply font-sans font-semibold;
   }
 }
 

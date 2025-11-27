@@ -1,6 +1,7 @@
 <template>
   <div>
     <HeroSection />
+    <StatsSection />
     <PromotionCards />
     <ServiceGrid />
     <DoctorTeam />

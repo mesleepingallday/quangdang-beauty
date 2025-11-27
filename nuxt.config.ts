@@ -18,10 +18,30 @@ export default defineNuxtConfig({
       title: 'Beauty Med Spa - Trung Tâm Thẩm Mỹ Uy Tín',
       meta: [
         { name: 'description', content: 'Trung tâm thẩm mỹ uy tín với đội ngũ bác sĩ chuyên nghiệp, công nghệ hiện đại' },
-        { name: 'format-detection', content: 'telephone=no' }
+        { name: 'format-detection', content: 'telephone=no' },
+        { property: 'og:title', content: 'Beauty Med Spa - Trung Tâm Thẩm Mỹ Uy Tín' },
+        { property: 'og:description', content: 'Trung tâm thẩm mỹ uy tín với đội ngũ bác sĩ chuyên nghiệp, công nghệ hiện đại' },
+        { property: 'og:image', content: 'https://beautymedspa.vn/logo.svg' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:site_name', content: 'Beauty Med Spa' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: 'Beauty Med Spa - Trung Tâm Thẩm Mỹ Uy Tín' },
+        { name: 'twitter:description', content: 'Trung tâm thẩm mỹ uy tín với đội ngũ bác sĩ chuyên nghiệp, công nghệ hiện đại' },
+        { name: 'twitter:image', content: 'https://beautymedspa.vn/logo.svg' }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+        { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' },
+        { rel: 'manifest', href: '/site.webmanifest' },
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Momo+Trust+Display:wght@400;600;700&family=Momo+Trust+Sans:wght@300;400;500;600;700&display=swap'
+        }
       ]
     }
   },

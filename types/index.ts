@@ -120,7 +120,10 @@ export interface SEOMeta {
 export interface NavItem {
   label: string
   href: string
+  icon?: string
   children?: NavItem[]
+  featured?: boolean
+  description?: string
 }
 
 // Testimonial Types

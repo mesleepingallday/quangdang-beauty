@@ -8,8 +8,8 @@
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <!-- Hero Content -->
         <div class="space-y-6">
-          <h1 class="text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-white leading-tight">
-            Beauty Med Spa
+          <h1 class="text-3xl lg:text-4xl xl:text-5xl font-display font-bold text-white leading-tight">
+            Viện Thẩm Mỹ Quang Đăng
             <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-secondary-light">Trung Tâm Thẩm Mỹ Uy Tín Hàng Đầu</span>
           </h1>
           

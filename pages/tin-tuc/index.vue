@@ -90,9 +90,9 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Tin Tức & Blog - Beauty Med Spa',
+  title: 'Tin Tức & Blog - Viện Thẩm Mỹ Quang Đăng',
   description: 'Tin tức làm đẹp, xu hướng thẩm mỹ, mẹo chăm sóc da và câu hỏi thường gặp từ chuyên gia.',
-  ogTitle: 'Tin Tức & Blog - Beauty Med Spa',
+  ogTitle: 'Tin Tức & Blog - Viện Thẩm Mỹ Quang Đăng',
   ogDescription: 'Cập nhật tin tức làm đẹp và xu hướng thẩm mỹ mới nhất',
 })
 

@@ -4,7 +4,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Company Info -->
         <div>
-          <h3 class="text-white text-xl font-bold mb-4">Beauty Med Spa</h3>
+          <h3 class="text-white text-xl font-bold mb-4">Viện Thẩm Mỹ Quang Đăng</h3>
           <p class="text-sm mb-4">
             Trung tâm thẩm mỹ uy tín với đội ngũ bác sĩ chuyên nghiệp và công nghệ hiện đại.
           </p>
@@ -62,7 +62,7 @@
             <li class="flex items-center space-x-2">
               <Icon name="heroicons:envelope" class="w-5 h-5 flex-shrink-0" />
               <a href="mailto:info@beautymedspa.vn" class="hover:text-white transition-colors">
-                info@beautymedspa.vn
+                info@quangdangbeauty.vn
               </a>
             </li>
             <li class="flex items-start space-x-2">
@@ -70,20 +70,6 @@
               <span>T2-T7: 8:00 - 20:00<br>CN: 9:00 - 17:00</span>
             </li>
           </ul>
-        </div>
-      </div>
-
-      <!-- Bottom Bar -->
-      <div class="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
-        <p>&copy; {{ currentYear }} Beauty Med Spa. All rights reserved.</p>
-        <div class="mt-2 space-x-4">
-          <NuxtLink to="/privacy-policy" class="hover:text-white transition-colors">
-            Chính Sách Bảo Mật
-          </NuxtLink>
-          <span>|</span>
-          <NuxtLink to="/terms-of-service" class="hover:text-white transition-colors">
-            Điều Khoản Sử Dụng
-          </NuxtLink>
         </div>
       </div>
     </div>

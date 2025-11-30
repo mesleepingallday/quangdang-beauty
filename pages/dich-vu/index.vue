@@ -66,9 +66,9 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Dịch Vụ Thẩm Mỹ - Beauty Med Spa',
+  title: 'Dịch Vụ Thẩm Mỹ - Viện Thẩm Mỹ Quang Đăng',
   description: 'Khám phá các dịch vụ thẩm mỹ chuyên nghiệp: Botox, Filler, IPL, Microneedling, HydraFacial và nhiều hơn nữa.',
-  ogTitle: 'Dịch Vụ Thẩm Mỹ - Beauty Med Spa',
+  ogTitle: 'Dịch Vụ Thẩm Mỹ - Viện Thẩm Mỹ Quang Đăng',
   ogDescription: 'Dịch vụ thẩm mỹ chuyên nghiệp với công nghệ hiện đại',
 })
 

@@ -8,7 +8,7 @@
             Về Chúng Tôi
           </h1>
           <p class="text-lg text-gray-600">
-            Beauty Med Spa - Địa chỉ thẩm mỹ uy tín, đồng hành cùng vẻ đẹp tự nhiên của bạn
+            Viện Thẩm Mỹ Quang Đăng - Địa chỉ thẩm mỹ uy tín, đồng hành cùng vẻ đẹp tự nhiên của bạn
           </p>
         </div>
       </div>
@@ -23,10 +23,10 @@
               <h2 class="text-3xl font-bold text-gray-900 mb-6">Câu Chuyện Của Chúng Tôi</h2>
               <div class="space-y-4 text-gray-600">
                 <p>
-                  Được thành lập từ năm 2010, Beauty Med Spa đã trở thành một trong những trung tâm thẩm mỹ uy tín hàng đầu tại Việt Nam. Với hơn 15 năm kinh nghiệm, chúng tôi tự hào đã đồng hành cùng hàng nghìn khách hàng trên hành trình tìm lại vẻ đẹp tự nhiên và sự tự tin.
+                  Được thành lập từ năm 2010, Viện Thẩm Mỹ Quang Đăng đã trở thành một trong những trung tâm thẩm mỹ uy tín hàng đầu tại Việt Nam. Với hơn 15 năm kinh nghiệm, chúng tôi tự hào đã đồng hành cùng hàng nghìn khách hàng trên hành trình tìm lại vẻ đẹp tự nhiên và sự tự tin.
                 </p>
                 <p>
-                  Chúng tôi tin rằng vẻ đẹp thật sự đến từ sự tự tin và cân bằng giữa bên trong và bên ngoài. Vì vậy, mỗi liệu trình tại Beauty Med Spa không chỉ đơn thuần là cải thiện ngoại hình, mà còn là hành trình chăm sóc toàn diện cho sức khỏe và tinh thần của bạn.
+                  Chúng tôi tin rằng vẻ đẹp thật sự đến từ sự tự tin và cân bằng giữa bên trong và bên ngoài. Vì vậy, mỗi liệu trình tại Viện Thẩm Mỹ Quang Đăng không chỉ đơn thuần là cải thiện ngoại hình, mà còn là hành trình chăm sóc toàn diện cho sức khỏe và tinh thần của bạn.
                 </p>
                 <p>
                   Đội ngũ bác sĩ và chuyên gia của chúng tôi luôn cập nhật những công nghệ và kỹ thuật thẩm mỹ tiên tiến nhất, đồng thời đặt sự an toàn và hài lòng của khách hàng lên hàng đầu.
@@ -219,9 +219,9 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Về Chúng Tôi - Beauty Med Spa',
-  description: 'Tìm hiểu về Beauty Med Spa - Trung tâm thẩm mỹ uy tín với hơn 15 năm kinh nghiệm, đội ngũ bác sĩ chuyên nghiệp và công nghệ hiện đại.',
-  ogTitle: 'Về Chúng Tôi - Beauty Med Spa',
+  title: 'Về Chúng Tôi - Viện Thẩm Mỹ Quang Đăng',
+  description: 'Tìm hiểu về Viện Thẩm Mỹ Quang Đăng - Trung tâm thẩm mỹ uy tín với hơn 15 năm kinh nghiệm, đội ngũ bác sĩ chuyên nghiệp và công nghệ hiện đại.',
+  ogTitle: 'Về Chúng Tôi - Viện Thẩm Mỹ Quang Đăng',
   ogDescription: 'Trung tâm thẩm mỹ uy tín hàng đầu Việt Nam',
 })
 </script>

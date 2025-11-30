@@ -160,9 +160,9 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Khuyến Mãi Đặc Biệt - Beauty Med Spa',
-  description: 'Khám phá các chương trình khuyến mãi hấp dẫn tại Beauty Med Spa. Giảm giá lên đến 40% cho các dịch vụ thẩm mỹ chuyên nghiệp.',
-  ogTitle: 'Khuyến Mãi Đặc Biệt - Beauty Med Spa',
+  title: 'Khuyến Mãi Đặc Biệt - Viện Thẩm Mỹ Quang Đăng',
+  description: 'Khám phá các chương trình khuyến mãi hấp dẫn tại Viện Thẩm Mỹ Quang Đăng. Giảm giá lên đến 40% cho các dịch vụ thẩm mỹ chuyên nghiệp.',
+  ogTitle: 'Khuyến Mãi Đặc Biệt - Viện Thẩm Mỹ Quang Đăng',
   ogDescription: 'Ưu đãi hấp dẫn cho dịch vụ thẩm mỹ',
 })
 

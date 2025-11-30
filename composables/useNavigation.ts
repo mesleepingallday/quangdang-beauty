@@ -79,13 +79,6 @@ export const useNavigation = () => {
         {
             label: "Về Chúng Tôi",
             href: "/ve-chung-toi",
-            children: [
-                { label: "Giới Thiệu", href: "/ve-chung-toi" },
-                { label: "Câu Chuyện", href: "/ve-chung-toi#cau-chuyen" },
-                { label: "Sứ Mệnh & Tầm Nhìn", href: "/ve-chung-toi#su-menh" },
-                { label: "Giá Trị Cốt Lõi", href: "/ve-chung-toi#gia-tri" },
-                { label: "Cơ Sở Vật Chất", href: "/ve-chung-toi#co-so" },
-            ],
         },
         {
             label: "Liên Hệ",

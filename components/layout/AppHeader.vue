@@ -1,8 +1,10 @@
 <template>
   <header 
-    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/10"
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b"
     :class="[
-      isScrolled ? 'bg-dark-bg/80 backdrop-blur-xl shadow-lg shadow-primary/5' : 'bg-transparent'
+      isScrolled 
+        ? 'bg-dark-bg/95 backdrop-blur-xl shadow-lg shadow-primary/10 border-white/20' 
+        : 'bg-dark-bg/90 backdrop-blur-md border-white/10'
     ]"
   >
     <nav class="container mx-auto px-4 py-4">
@@ -10,14 +12,14 @@
         <!-- Logo -->
         <NuxtLink
           to="/"
-          class="flex-shrink-0 group relative"
-          aria-label="Beauty Med Spa - Trang chủ"
+          class="flex-shrink-0 group relative -my-4"
+          aria-label="Viện Thẩm Mỹ Quang Đăng - Trang chủ"
         >
           <div class="absolute -inset-2 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <img
             src="/logo.svg"
-            alt="Beauty Med Spa Logo"
-            class="h-12 relative z-10 transition-transform duration-300 group-hover:scale-105"
+            alt="Viện Thẩm Mỹ Quang Đăng Logo"
+            class="h-20 relative z-10 transition-transform duration-300 group-hover:scale-105"
           />
         </NuxtLink>
 

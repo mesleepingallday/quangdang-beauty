@@ -144,9 +144,9 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Đội Ngũ Bác Sĩ - Beauty Med Spa',
-  description: 'Gặp gỡ đội ngũ bác sĩ chuyên nghiệp với kinh nghiệm phong phú trong lĩnh vực thẩm mỹ da và điều trị laser tại Beauty Med Spa.',
-  ogTitle: 'Đội Ngũ Bác Sĩ Chuyên Nghiệp - Beauty Med Spa',
+  title: 'Đội Ngũ Bác Sĩ - Viện Thẩm Mỹ Quang Đăng',
+  description: 'Gặp gỡ đội ngũ bác sĩ chuyên nghiệp với kinh nghiệm phong phú trong lĩnh vực thẩm mỹ da và điều trị laser tại Viện Thẩm Mỹ Quang Đăng.',
+  ogTitle: 'Đội Ngũ Bác Sĩ Chuyên Nghiệp - Viện Thẩm Mỹ Quang Đăng',
   ogDescription: 'Đội ngũ bác sĩ giàu kinh nghiệm, được đào tạo chuyên sâu',
 })
 

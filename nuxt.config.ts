@@ -2,32 +2,32 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  
+
   components: [
     {
       path: '~/components',
       pathPrefix: false,
     },
   ],
-  
+
   app: {
     head: {
       htmlAttrs: { lang: 'vi' },
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      title: 'Beauty Med Spa - Trung Tâm Thẩm Mỹ Uy Tín',
+      title: 'Viện Thẩm Mỹ Quang Đăng - Trung Tâm Thẩm Mỹ Uy Tín',
       meta: [
         { name: 'description', content: 'Trung tâm thẩm mỹ uy tín với đội ngũ bác sĩ chuyên nghiệp, công nghệ hiện đại' },
         { name: 'format-detection', content: 'telephone=no' },
-        { property: 'og:title', content: 'Beauty Med Spa - Trung Tâm Thẩm Mỹ Uy Tín' },
+        { property: 'og:title', content: 'Viện Thẩm Mỹ Quang Đăng - Trung Tâm Thẩm Mỹ Uy Tín' },
         { property: 'og:description', content: 'Trung tâm thẩm mỹ uy tín với đội ngũ bác sĩ chuyên nghiệp, công nghệ hiện đại' },
-        { property: 'og:image', content: 'https://beautymedspa.vn/logo.svg' },
+        { property: 'og:image', content: 'https://quangdangbeauty.vn/logo.svg' },
         { property: 'og:type', content: 'website' },
-        { property: 'og:site_name', content: 'Beauty Med Spa' },
+        { property: 'og:site_name', content: 'Viện Thẩm Mỹ Quang Đăng' },
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'Beauty Med Spa - Trung Tâm Thẩm Mỹ Uy Tín' },
+        { name: 'twitter:title', content: 'Viện Thẩm Mỹ Quang Đăng - Trung Tâm Thẩm Mỹ Uy Tín' },
         { name: 'twitter:description', content: 'Trung tâm thẩm mỹ uy tín với đội ngũ bác sĩ chuyên nghiệp, công nghệ hiện đại' },
-        { name: 'twitter:image', content: 'https://beautymedspa.vn/logo.svg' }
+        { name: 'twitter:image', content: 'https://quangdangbeauty.vn/logo.svg' }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -44,7 +44,7 @@ export default defineNuxtConfig({
       ]
     }
   },
-  
+
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/seo',
@@ -54,20 +54,20 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@pinia/nuxt',
   ],
-  
+
   css: ['~/assets/css/main.css'],
-  
+
   site: {
-    url: 'https://beautymedspa.vn',
-    name: 'Beauty Med Spa',
+    url: 'https://quangdangbeauty.vn',
+    name: 'Viện Thẩm Mỹ Quang Đăng',
     description: 'Trung tâm thẩm mỹ uy tín với đội ngũ bác sĩ chuyên nghiệp, công nghệ hiện đại',
     defaultLocale: 'vi',
   },
-  
+
   ogImage: {
     enabled: false
   },
-  
+
   image: {
     quality: 80,
     formats: ['webp', 'avif'],
@@ -80,7 +80,7 @@ export default defineNuxtConfig({
       xxl: 1536,
     }
   },
-  
+
   content: {
     markdown: {
       anchorLinks: false
@@ -89,8 +89,8 @@ export default defineNuxtConfig({
       theme: 'github-light'
     }
   },
-  
-  
+
+
   vite: {
     server: {
       hmr: {
@@ -98,7 +98,7 @@ export default defineNuxtConfig({
       }
     }
   },
-  
+
   nitro: {
     compressPublicAssets: false,
     minify: false,
@@ -106,29 +106,29 @@ export default defineNuxtConfig({
       tasks: false
     }
   },
-  
+
   routeRules: {
     '/': { prerender: true },
     '/dich-vu/**': { swr: 3600 },
     '/tin-tuc/**': { swr: 3600 },
     '/api/**': { cors: true }
   },
-  
+
   runtimeConfig: {
     // Private keys (only available server-side)
     smtpHost: process.env.SMTP_HOST || 'smtp.gmail.com',
     smtpPort: parseInt(process.env.SMTP_PORT || '587'),
     smtpUser: process.env.SMTP_USER || '',
     smtpPass: process.env.SMTP_PASS || '',
-    adminEmail: process.env.ADMIN_EMAIL || 'admin@beautymedspa.vn',
-    
+    adminEmail: process.env.ADMIN_EMAIL || 'admin@quangdangbeauty.vn',
+
     // Public keys (exposed to client-side)
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
       gaId: process.env.NUXT_PUBLIC_GA_ID || '',
     }
   },
-  
+
   typescript: {
     strict: true,
     typeCheck: false

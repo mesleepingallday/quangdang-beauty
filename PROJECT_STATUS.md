@@ -284,18 +284,6 @@ Create a `.env` file with:
 NUXT_PUBLIC_SITE_URL=http://localhost:3000
 NUXT_PUBLIC_GA_ID=
 
-# Email Configuration (for future implementation)
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=
-SMTP_PASS=
-ADMIN_EMAIL=admin@beautymedspa.vn
-
-# Database (for future implementation)
-DATABASE_URL=
-```
-
----
 
 ## 📊 Current Features Summary
 

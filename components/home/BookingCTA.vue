@@ -40,12 +40,12 @@
 
           <!-- Email -->
           <a 
-            href="mailto:info@beautymedspa.vn"
+            href="mailto:info@quangdangbeauty.vn"
             class="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-6 transition-all duration-300 hover:scale-105"
           >
             <Icon name="heroicons:envelope" class="w-10 h-10 mx-auto mb-3" />
             <div class="font-semibold mb-1">Email</div>
-            <div class="text-sm text-blue-100">info@beautymedspa.vn</div>
+            <div class="text-sm text-blue-100">info@quangdangbeauty.vn</div>
           </a>
         </div>
 

@@ -230,9 +230,9 @@ const relatedPromotions = [
 ]
 
 useSeoMeta({
-  title: `${promotion.title} - Beauty Med Spa`,
+  title: `${promotion.title} - Viện Thẩm Mỹ Quang Đăng`,
   description: promotion.description,
-  ogTitle: `${promotion.title} - Beauty Med Spa`,
+  ogTitle: `${promotion.title} - Viện Thẩm Mỹ Quang Đăng`,
   ogDescription: promotion.description,
 })
 </script>

@@ -167,9 +167,9 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Công Nghệ Hiện Đại - Beauty Med Spa',
+  title: 'Công Nghệ Hiện Đại - Viện Thẩm Mỹ Quang Đăng',
   description: 'Trang bị đầy đủ các thiết bị và công nghệ thẩm mỹ tiên tiến nhất như Laser CO2, IPL, HIFU, RF Microneedling với chứng nhận FDA, CE.',
-  ogTitle: 'Công Nghệ Hiện Đại - Beauty Med Spa',
+  ogTitle: 'Công Nghệ Hiện Đại - Viện Thẩm Mỹ Quang Đăng',
   ogDescription: 'Công nghệ thẩm mỹ tiên tiến, an toàn và hiệu quả',
 })
 

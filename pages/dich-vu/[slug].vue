@@ -245,9 +245,9 @@ const formatPrice = (price: number) => {
 
 // SEO
 useSeoMeta({
-  title: `${service.value?.name} - Beauty Med Spa`,
+  title: `${service.value?.name} - Viện Thẩm Mỹ Quang Đăng`,
   description: service.value?.description,
-  ogTitle: `${service.value?.name} - Beauty Med Spa`,
+  ogTitle: `${service.value?.name} - Viện Thẩm Mỹ Quang Đăng`,
   ogDescription: service.value?.description,
 })
 </script>

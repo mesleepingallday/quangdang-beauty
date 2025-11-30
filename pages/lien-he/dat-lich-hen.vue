@@ -60,14 +60,14 @@
 
             <!-- Email -->
             <a 
-              href="mailto:info@beautymedspa.vn"
+              href="mailto:info@quangdangbeauty.vn"
               class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all text-center"
             >
               <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Icon name="heroicons:envelope" class="w-8 h-8 text-primary" />
               </div>
               <h3 class="font-semibold text-gray-900 mb-2">Email</h3>
-              <p class="text-gray-600">info@beautymedspa.vn</p>
+              <p class="text-gray-600">info@quangdangbeauty.vn</p>
               <p class="text-sm text-gray-500 mt-2">Phản hồi trong 24h</p>
             </a>
           </div>
@@ -100,9 +100,9 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Đặt Lịch Hẹn - Beauty Med Spa',
-  description: 'Đặt lịch tư vấn và trải nghiệm dịch vụ thẩm mỹ chuyên nghiệp tại Beauty Med Spa. Liên hệ ngay để được tư vấn miễn phí.',
-  ogTitle: 'Đặt Lịch Hẹn - Beauty Med Spa',
+  title: 'Đặt Lịch Hẹn - Viện Thẩm Mỹ Quang Đăng',
+  description: 'Đặt lịch tư vấn và trải nghiệm dịch vụ thẩm mỹ chuyên nghiệp tại Viện Thẩm Mỹ Quang Đăng. Liên hệ ngay để được tư vấn miễn phí.',
+  ogTitle: 'Đặt Lịch Hẹn - Viện Thẩm Mỹ Quang Đăng',
   ogDescription: 'Đặt lịch tư vấn miễn phí với bác sĩ chuyên nghiệp',
 })
 </script>

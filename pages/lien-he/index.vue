@@ -51,14 +51,14 @@
 
             <!-- Email -->
             <a 
-              href="mailto:info@beautymedspa.vn"
+              href="mailto:info@quangdangbeauty.vn"
               class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all text-center border-2 border-transparent hover:border-primary"
             >
               <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Icon name="heroicons:envelope" class="w-8 h-8 text-primary" />
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-2">Email</h3>
-              <p class="text-lg font-semibold text-primary mb-2">info@beautymedspa.vn</p>
+              <p class="text-lg font-semibold text-primary mb-2">info@quangdangbeauty.vn</p>
               <p class="text-sm text-gray-600">Phản hồi trong 24h</p>
             </a>
           </div>
@@ -68,7 +68,6 @@
             <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">
               Gửi Tin Nhắn Cho Chúng Tôi
             </h3>
-            
             <form @submit.prevent="handleSubmit" class="space-y-6">
               <div class="grid md:grid-cols-2 gap-6">
                 <!-- Name -->
@@ -291,9 +290,9 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Liên Hệ - Beauty Med Spa',
-  description: 'Liên hệ với Beauty Med Spa để được tư vấn miễn phí về các dịch vụ thẩm mỹ. Hotline: 0123 456 789 - Email: info@beautymedspa.vn',
-  ogTitle: 'Liên Hệ - Beauty Med Spa',
+  title: 'Liên Hệ - Viện Thẩm Mỹ Quang Đăng',
+  description: 'Liên hệ với Viện Thẩm Mỹ Quang Đăng để được tư vấn miễn phí về các dịch vụ thẩm mỹ. Hotline: 0123 456 789 - Email: info@quangdangbeauty.vn',
+  ogTitle: 'Liên Hệ - Viện Thẩm Mỹ Quang Đăng',
   ogDescription: 'Liên hệ để được tư vấn miễn phí',
 })
 

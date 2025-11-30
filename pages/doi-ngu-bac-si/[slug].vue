@@ -257,7 +257,7 @@ const doctor = {
   experienceTimeline: [
     {
       position: 'Bác Sĩ Trưởng Khoa Da Liễu',
-      institution: 'Beauty Med Spa',
+      institution: 'Viện Thẩm Mỹ Quang Đăng',
       period: '2018 - Hiện tại',
       description: 'Phụ trách toàn bộ các dịch vụ thẩm mỹ da, đào tạo đội ngũ bác sĩ trẻ'
     },
@@ -313,9 +313,9 @@ const relatedServices = [
 ]
 
 useSeoMeta({
-  title: `${doctor.name} - Đội Ngũ Bác Sĩ - Beauty Med Spa`,
+  title: `${doctor.name} - Đội Ngũ Bác Sĩ - Viện Thẩm Mỹ Quang Đăng`,
   description: `${doctor.title} với ${doctor.experience} năm kinh nghiệm. ${doctor.specialization}`,
-  ogTitle: `${doctor.name} - Beauty Med Spa`,
+  ogTitle: `${doctor.name} - Viện Thẩm Mỹ Quang Đăng`,
   ogDescription: doctor.title,
 })
 </script>
